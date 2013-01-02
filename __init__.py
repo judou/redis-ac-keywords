@@ -1,6 +1,10 @@
 import redis
 
 class RedisACKeywords(object):
+    '''
+    (1) Efficient String Matching: An Aid to Bibliographic Search
+    (2) Construction of Aho Corasick Automaton in Linear Time for Integer Alphabets
+    '''
     # %s is name
     KEYWORD_KEY=u'%s:keyword'
     PREFIX_KEY=u'%s:prefix'
