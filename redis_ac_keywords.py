@@ -90,6 +90,12 @@ class RedisACKeywords(object):
         self.client.delete(self.SUFFIX_KEY % self.name)
         self.client.delete(self.KEYWORD_KEY % self.name)
 
+    def info(self):
+        return {
+            'keywords':self.client.scard(self.KEYWORD_KEY % self.name),
+            'nodes':self.client.zcard(self.PREFIX_KEY % self.name),
+        }
+
     def suggest(self, input):
         input = self.smart_unicode(input)
         ret = []
