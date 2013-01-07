@@ -155,7 +155,7 @@ class RedisACKeywords(object):
                 self._build_output(state)
             else:
                 break
-            rank += 1
+            rank += 1 # TODO: Binary search?
             a = self.client.zrange(self.SUFFIX_KEY % self.name, rank, rank)
 
     def _build_output(self, state):
